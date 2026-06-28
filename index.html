@@ -772,10 +772,19 @@
       const yyyy = now.getFullYear();
       const mm = String(now.getMonth() + 1).padStart(2, '0');
       const dd = String(now.getDate()).padStart(2, '0');
-      const hh = String(now.getHours()).padStart(2, '0');
-      const mi = String(now.getMinutes()).padStart(2, '0');
-      return `memo${yyyy}${mm}${dd}${hh}${mi}`;
+      return `${yyyy}-${mm}-${dd} memo`;
     }
+生成されるファイル名の例：2026-06-29 memo
+
+Obsidianカレンダーに登録される仕組み：
+
+Obsidianの Calendar プラグインは YYYY-MM-DD で始まるファイル名をその日付のデイリーノートとして認識します。2026-06-29 memo という名前にすることで、カレンダー上の6月29日のノートとして表示されます。
+
+C:\Users\user\Documents\memo-memo\index.html を開いて、generateTimestampedNoteName 関数を上記に差し替えてGitHubにpushしてください。
+
+
+
+
 
     // 保存ノート名欄に自動でタイムスタンプ名をセット（手動編集があれば上書きしない）
     function autoFillObsidianFilename() {
