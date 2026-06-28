@@ -772,7 +772,9 @@
       const yyyy = now.getFullYear();
       const mm = String(now.getMonth() + 1).padStart(2, '0');
       const dd = String(now.getDate()).padStart(2, '0');
-      return `${yyyy}-${mm}-${dd} memo`;
+      const hh = String(now.getHours()).padStart(2, '0');
+      const mi = String(now.getMinutes()).padStart(2, '0');
+      return `${yyyy}-${mm}-${dd} memo${yyyy}${mm}${dd}${hh}${mi}`;
     }
 生成されるファイル名の例：2026-06-29 memo
 
